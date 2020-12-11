@@ -37,8 +37,8 @@ t2 = 0.4;  % shearing
 t3 = 1.5;  % rotation
 
 % function used for enhance features
-enhance_fun = @enhance_simple_inverse;
 % enhance_fun = @enhance_simple_inverse;
+enhance_fun = @enhance_morph_clear_border;
 % whether to save the result depends on if any information is updated
 anyluck = false;
 
