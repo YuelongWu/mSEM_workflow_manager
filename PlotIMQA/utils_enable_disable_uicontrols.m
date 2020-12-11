@@ -1,0 +1,19 @@
+function utils_enable_disable_uicontrols(handles, status)
+    set(handles.button_thresh,'Enable',status);
+    set(handles.button_savesingle,'Enable',status);
+    set(handles.button_saveall,'Enable',status);
+    set(handles.radio_notverified,'Enable',status);
+    set(handles.radio_good,'Enable',status);
+    set(handles.radio_bad,'Enable',status);
+    set(handles.popup_sections,'Enable',status);
+    set(handles.add_comment_button,'Enable',status);
+    try
+        set(handles.popup_selcomment,'Enable',status);
+        set(handles.checkbox_mfov,'Enable',status);
+        set(handles.checkbox_fsp,'Enable',status);
+        set(handles.checkbox_overview,'Enable',status);
+        set(handles.checkbox_sfov,'Enable',status);
+        set(handles.pushbutton_overide,'Enable',status);
+    catch
+    end
+end

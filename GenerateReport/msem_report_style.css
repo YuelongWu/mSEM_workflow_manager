@@ -1,0 +1,159 @@
+/* CSS sheet to format Retake Manager reports */
+/* Yuelong Wu, Feb 2019 */
+body {background-color: white}
+/* remove the hyperlink style */
+a:link, a:visited {
+    color: inherit;
+    text-decoration: none;
+}
+table {border-collapse: collapse;}
+table, th, td {
+    border: 1px solid lightgray;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+}
+/* table for wafer stats */
+#waferStats {
+    width: 50%;
+    border-style: none;
+}
+#waferStats th {
+    font-weight: bold;
+    width: 25%;
+    border-style: none;
+    white-space: nowrap;
+}
+#waferStats td {
+    border-style: none;
+    width: 7%;
+}
+/* the buttons to collapse/expand a column */
+th button {
+    background-color: slategray;
+    border: none;
+    color: lightgray;
+    padding: 0px 2px;
+    text-align: center;
+    font-size: 10px;
+    cursor: pointer;
+}
+/* highlight the collapse button when hover*/
+th button:hover {background-color: darkslategray;}
+thead th {
+    font-size: 12px;
+    padding: 5px;
+    background-color: slategray;
+    color: white;
+    white-space: nowrap;
+}
+/* table row head to list section names */
+tbody th {
+    font-size: 11px;
+    padding: 3px;
+    white-space: nowrap;
+}
+/* highlight the row when hovered */
+tbody tr:hover {background-color: rgba(211,211,211,0.75);}
+/* the max-width 0 s.t. the column widths are defined by head */
+/* overflowed text hidden by default and shown when hover */
+td {
+    font-size: 11px;
+    padding: 3px;
+    white-space: nowrap;
+}
+td.ovflw {   
+    max-width: 0px;
+}
+/* put the td text in div */
+td.ovflw div {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/* hover over to show scrollbar when text overflowed */
+td.ovflw div:hover {
+    overflow: auto;
+}
+/* error sections need special attention */
+tr.errorSection th {
+    background-color: rgba(225,0,0,0.75);
+    color: white;
+}
+/* user decide to retake */
+.userRetake {
+    background-color: rgba(255,100,100,0.75);
+    color: white;
+}
+/* sections with warning: better to check */
+tr.warngSection th {
+    background-color: rgba(255,255,0,0.75);
+    color: black;
+}
+/* normal sections */
+tr.normlSection th {
+    background-color: transparent;
+    color: black;
+}
+.userNormal {
+    background-color: transparent;
+    color: black;
+}
+/* sections with retaken */
+tr.retakSection th {
+    background-color: transparent;
+    color: black;
+}
+/* sections manually discarded by the user */
+tr.discdSection th {
+    background-color: blue;
+    color: white;
+    text-decoration: line-through;
+}
+.userDiscard {
+    background-color: rgba(100,100,255,0.75);
+    color: white;
+    text-decoration: line-through;
+}
+/* sections retaken/discarded set to semitransparent */
+tr.retakSection {opacity: 0.4;}
+/* tr.discdSection {opacity: 0.4;} */
+/* td element with error */
+.errorElem {
+    background-color: rgba(250,128,114,0.5);
+}
+/* td element not finished in the retake manager */
+.swbugElem {
+    background-color: rgba(255,0,255,0.5);
+}
+/* td element with error but overriden by the user */
+.errorElemOverriden {
+    background-color: rgba(250,220,220,0.5);
+}
+/* td element with warning */
+.warngElem {
+    background-color: rgba(255,255,0,0.5);
+}
+/* td element with warining but overriden by the user */
+.warngElemOverriden {
+    background-color: rgba(255,255,200,0.5);
+}
+/* hidden section id colume for sorting */
+.secid {
+    display: none;
+}
+/* animation added to the latest section */
+@keyframes twinkleShadow {
+    from {text-shadow: 0px 0px 1px;}
+    to {text-shadow: none;}
+}
+#latestSection {
+    animation-name: twinkleShadow;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+/* hide workflow, worst beam by default*/
+.wf {
+    display: none;
+}
+/* .wstb {
+    display: none;
+} */
