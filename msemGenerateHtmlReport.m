@@ -8,7 +8,6 @@ try
     result_dir = uigetdir(result_dir,'Select the folder with the processed results');
 catch
     result_dir = '.';
-    result_dir = 'F:\U19_Fish1_5\RetakeManager';
     result_dir = uigetdir(result_dir,'Select the folder with the processed results');
 end
 
