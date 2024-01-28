@@ -81,7 +81,7 @@ end
 %%
 user_options = config_user_options;
 p = gcp;
-useExperimentLog = false
+useExperimentLog = false;
 if useExperimentLog
     [job_queue, ~] = update_job_queue(batch_dir, sys_result_parent, {}, 0);
 else
@@ -91,9 +91,6 @@ end
 Nj = length(job_queue);
 for k = 1:1:Nj     
     section_dir = job_queue{k}.SectionName;
-    if ~contains(section_dir, '017_S18R1')
-        continue
-    end
     fprintf('\n')
     disp(['Start to processing: ', section_dir]);
     disp(datestr(now,'yyyy-mm-dd HH:MM:SS'));
